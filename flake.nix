@@ -26,6 +26,11 @@
 
               gh
 
+              opentofu
+              tofu-ls
+
+              docker_29
+
               # ruff-lsp
               # rust-analyzer
             ];
