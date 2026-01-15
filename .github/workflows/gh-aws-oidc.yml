@@ -30,12 +30,15 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working_directory: ./tf
 
       - name: Terraform Format Check
         run: terraform fmt
+        working_directory: ./tf
 
       - name: Terraform Validate
         run: terraform validate
+        working_directory: ./tf
     
       # - name: Test AWS Credentials
       #   run: aws sts get-caller-identity
