@@ -3,14 +3,14 @@ name: Github AWS OIDC
 on:
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   oidc-test:
     name: OIDC Test
     runs-on: ubuntu-latest
-
-    permissions:
-      id-token: write
-      contents: read
 
     steps:
       - name: Checkout Source Code
@@ -30,15 +30,15 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working_directory: ./tf
+        working_directory: tf
 
       - name: Terraform Format Check
         run: terraform fmt
-        working_directory: ./tf
+        working_directory: tf
 
       - name: Terraform Validate
         run: terraform validate
-        working_directory: ./tf
+        working_directory: tf
     
       # - name: Test AWS Credentials
       #   run: aws sts get-caller-identity
