@@ -24,5 +24,4 @@ jobs:
           role-to-assume: ${{ secrets.AWS_OIDC_IAM_ROLE }}
 
       - name: Test AWS Credentials
-        # run: aws sts get-caller-identity
-        run: aws account get-account-information
+        run: aws sts get-caller-identity
