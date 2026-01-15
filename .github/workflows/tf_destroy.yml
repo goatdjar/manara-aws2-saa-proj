@@ -1,8 +1,6 @@
 name: Terraform Destroy
 
 on:
-  push:
-    braches: [ gh-aws-oidc-test ]
   workflow_dispatch:
 
 permissions:
