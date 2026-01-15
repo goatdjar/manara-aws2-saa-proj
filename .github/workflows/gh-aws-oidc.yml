@@ -42,11 +42,13 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan
+        working-directory: ./tf
 
       # Dangerous! Need gatekeeping here.
       # This is just a test.
       - name: Terraform Apply
         run: terraform apply -auto-approve
+        working-directory: ./tf
     
       # - name: Test AWS Credentials
       #   run: aws sts get-caller-identity
