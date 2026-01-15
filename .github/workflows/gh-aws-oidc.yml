@@ -2,8 +2,6 @@ name: Github AWS OIDC
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches: [gc-aws-oidc-test]
 
 permissions:
   id-token: write
