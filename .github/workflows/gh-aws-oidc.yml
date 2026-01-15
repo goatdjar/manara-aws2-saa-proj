@@ -1,8 +1,9 @@
 name: Github AWS OIDC
 
 on:
-  push:
-    branches: [gc-aws-oidc-test]
+  workflow_dispatch:
+  # push:
+  #   branches: [gc-aws-oidc-test]
 
 permissions:
   id-token: write
@@ -24,4 +25,4 @@ jobs:
 
       - name: Test AWS Credentials
         # run: aws sts get-caller-identity
-        run: aws iam get-role --role-name Github-Actions-Role
+        run: aws account get-account-information
