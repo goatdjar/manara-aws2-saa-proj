@@ -24,7 +24,7 @@ jobs:
           role-to-assume: ${{ secrets.AWS_OIDC_IAM_ROLE }}
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@latest
+        uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: "1.14.0"
 
