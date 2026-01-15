@@ -28,6 +28,10 @@ jobs:
         with:
           terraform_version: "1.14.0"
 
+      - name: Terraform Init Backend
+        run: terraform init
+        working-directory: ./tf
+
       - name: Terraform Destroy
         run: terraform destroy -auto-approve
         working-directory: ./tf
