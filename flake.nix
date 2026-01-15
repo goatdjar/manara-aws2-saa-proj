@@ -33,6 +33,8 @@
               terraform
               terraform-ls
 
+              awscli2
+
               docker_29
 
               # ruff-lsp
