@@ -3,13 +3,14 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     flake-utils.url = "github:numtide/flake-utils";
-    
+    nixpkgs-terraform.url = "github:stackbuilders/nixpkgs-terraform";
   };
-  outputs = { self, nixpkgs, flake-utils, ... }:
+  outputs = { self, nixpkgs, flake-utils, nixpkgs-terraform }:
     flake-utils.lib.eachDefaultSystem
       (system:
         let
           pkgs = import nixpkgs {
+            terraform = nixpkgs-terraform.packages.${system}."1.8.0";
             inherit system;
           };
         in
@@ -28,6 +29,9 @@
 
               opentofu
               tofu-ls
+
+              terraform
+              terraform-ls
 
               docker_29
 
