@@ -25,6 +25,11 @@ jobs:
           aws-region: ap-southeast-1
           role-to-assume: ${{ secrets.AWS_OIDC_IAM_ROLE }}
 
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.14.0"
+
       - name: Terraform Destroy
         run: terraform destroy -auto-approve
         working-directory: ./tf
